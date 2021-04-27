@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Переменные и типы данных</title>
+</head>
+<body>
+
+<script>
+    //способы обявления переменных (операторы)
+a = 'global variable';//не самый лучший вариант объявления переменной
+
+
+var b='глобально, но внутри скрипта';//стараться испоьзовать только в исключительных ситуациях,когда let and const не подходят
+
+
+
+let c='учитывается область видимости';//можно смело использовать в тех ситуациях, когда значения переменной будет перезаписываться
+
+const d='учит.область видимости ,но можно использовать в тех стиуациях когда в скрипте значение переменной не должна';
+
+
+ //   console.log(a ,b,c,d)
+    console.log('Вывод значения переменной a:', a);
+
+
+
+    //КОНКАТЕНАЦИЯ = это сложение строк через оператор "+".
+    console.log('Вывод значения переменной a:' + a + b  + c + d);
+    console.log('Вывод значения переменной a:' + a + '' + b + ''  + c + '' + d);//bad variant
+
+
+
+    //интерполяция - формируем с подстановкой значений из переменных. Аналог конкатинации без использования "+"
+    console.log(`Вывод значения переменной : ${a} ${b} ${c} ${d}`)
+
+
+
+
+
+
+
+</script>
+<!--//блок 1 .Инициализация  переменных, консоль и конкатенция\интерполяция.-->
+
+
+<!--Block 2.типы данных and fixed значения-->
+<script>
+//  ТД number
+let num =45;
+let num1 = 45.7653;
+let num2 = -17;
+
+//      ТД string
+let str1= 'sample text'
+let str2= 'sample text'
+let str3= '22'
+//ТД boolean (логический тип данных)
+let bool = true;//истина
+let bool2 = false;//ложь
+
+//когда все вытягиваешь из базы данных све элементы преобразуются в строки
+//ТД array(массив) примечение: при typeof будет object!!!
+let ar1= [];//empty array
+let ar2=['elem1',  'elem2', 'elem3'];
+let ar3=['elem1', 54, true, '54', false];//избегать
+console.log(ar3[4]);
+
+//Тд  object
+let obj1 = {
+    'friend1':'Ivan',
+    'friend2':'I',
+    'friend3':'you',
+
+};
+let obj2={
+  4: 'alex',
+   5: 'dada',
+   "phone":{
+      1: '+7964565744',
+       'lalaal':'songs'
+   }
+
+};
+
+console.log(obj2["4"])
+console.log(obj2.phone["1"])
+
+//define dates type in program typeof(x) or typeof x.
+console.log(typeof ar1)//object
+console.log(typeof(num1))//number
+console.log(typeof obj1)//object
+//Фиксированные значения
+let empty= null;//означает , что переменная проинициализирована но значения в ней нет .
+console.log('empty', empty);
+console.log(typeof empty); //object
+
+let empty2;//объявил, но не проиниц
+console.log(empty2)//undefined
+let empty3 = undefined;//так можно сделать , но это весьма странно.Ибо мы определяем переменную неопределенную.
+
+
+let err1= 'Hello'/4;
+console.log(err1)//NoN -ошибка вычесления
+</script>
+<!--bLock 3.операторы-->
+<script>
+   //Унарные операторы и Бинарные операторы
+   //Операнд - какой-то объект , переменная , функция
+   //Унарные операторы работаеют с одним операндом
+   //Бинарные операторы работают с двумя операндами
+   //Тернарный операторы работают с 3 операндами
+   //
+   let b3Num1 = 5 ,  b3Num2 = 10;
+   console.log(b3Num1 + b3Num2); //бинарный плюс
+   console.log(b3Num1 - b3Num2); //бинарный минус
+   console.log(b3Num1 / b3Num2); //бинарный деление
+   console.log(b3Num1 * b3Num2); //бинарный умножение
+   console.log(b3Num1 ** b3Num2); //возведение с степень
+   console.log(Math.pow(b3Num1 ,  b3Num2)); //возведение с степень
+   console.log()
+   console.log(b3Num1 % b3Num2); //остаток от деления
+   console.log(2 % 3); //2, остаток от делаения
+   //пример унарного сложения
+   b3Num3 = '3r'
+   console.log(5 + b3Num3); // 53
+   console.log(5 +  +b3Num3); // преобразовать из строки в число
+   console.log(5 +  Number(b3Num3)); // преобразовать из строки в число
+
+   //фунциия  prompt(), позволяет ввести значение, вовзращает string
+   let b3Num4= +prompt('Введите первое число')
+   let b3Num5= Number(prompt('Введите первое число'))
+   alert(b3Num5 + b3Num4)
+</script>
+</body>
+</html>

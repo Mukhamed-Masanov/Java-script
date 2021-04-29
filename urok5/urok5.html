@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<!--//block 1. Function if-->
+<script>
+    // if - переводиться как "если", данный фунция  принимает в качестве  параметра выражение , которое в конечном этапе будет преобразованно в логическому значению
+    //true or false
+    // else - иначе , выполняет свое тело когда в if конечное значение false
+
+    // операторы сравнения
+    // < - строго меньше (не включая)
+    // > - строго больше
+    // >= - больше или равно
+    //<= - меньше или равно
+    // == - проверка на равенство (не строгое) не проверяет тип данных(все равно на тип данных)
+    // === - проверка на равенство строгое проверяет тип данных (имеет значение)
+    // != - не равно (не  строгое)
+    //!== - не равно(строгое , сравнение вместе с типом)
+    let userInput = Number(prompt('введите ваш возраст'))
+    //при вводе текста  и попытки его преобразование в число мы получил ошибку Nan, но сама переменная userinput  будет типа данных "number".Поэтому
+    // проверять в условии не получиться , но можно проверит на Nan  функцией isNan()  - т.е по сути проверить на ошибку ввода
+    if (isNaN(userInput)) {
+        alert('NOt  number ')
+        } else if (userInput > 18) {
+        alert('вам больше 18')
+    }
+    else if (userInput ===18 ){
+        alert("вам 18")
+    }
+
+
+    //пример с выводом на страницу
+    if(+prompt('Какой сейчас год')===2021) {
+        document.write('<h1> вы абсолютно правы</h1>')
+    } else document.write('<h1>вы из будущего или прошлого</h1>')
+    //тернарный оператор (сокращения для условия)
+//(условие) ?       если истина  :если ложь
+        //особенности , может выполнить только одну инструкцию в блоке истину и одну в блоке лжи
+        //что блоки истины/лжи не могут быть пропущено
+        // (+prompt('Какой сейчас год') === 2021 ?   document.write('<h1> вы абсолютно правы</h1>'):document.write('<h1>вы из будущего или прошлого</h1>'))
+    //пример на ввод пароля
+
+let isAdmin = confirm('are you admin')    //confirm opens a window with variants yes / no , if chosen yes return -true/no return -false
+   if (isAdmin ){
+       let passWord = prompt('Введите пароль')
+       passWord === 'admins' ?
+           alert('you are allowed')  : alert('password is wrong')
+
+   } else{
+       alert('Dont open this page again!')
+   }
+
+
+</script>
+</body>
+</html>
